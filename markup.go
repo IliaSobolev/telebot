@@ -96,6 +96,7 @@ type Btn struct {
 	User            *ReplyRecipient `json:"request_user,omitempty"`
 	Chat            *ReplyRecipient `json:"request_chat,omitempty"`
 	CopyText        *CopyTextButton `json:"copy_text,omitempty"`
+	Style           string          `json:"style,omitempty"`
 }
 
 // Row represents an array of buttons, a row.
