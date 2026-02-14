@@ -229,6 +229,7 @@ type ReplyButton struct {
 	User     *ReplyRecipient `json:"request_users,omitempty"`
 	Chat     *ReplyRecipient `json:"request_chat,omitempty"`
 	WebApp   *WebApp         `json:"web_app,omitempty"`
+	Style    string          `json:"style,omitempty"`
 }
 
 // MarshalJSON implements json.Marshaler. It allows passing PollType as a
@@ -304,6 +305,7 @@ type InlineButton struct {
 	CallbackGame          *CallbackGame      `json:"callback_game,omitempty"`
 	Pay                   bool               `json:"pay,omitempty"`
 	CopyText              *CopyTextButton    `json:"copy_text,omitempty"`
+	Style                 string             `json:"style,omitempty"`
 }
 
 // MarshalJSON implements json.Marshaler interface.
@@ -349,6 +351,7 @@ func (b Btn) Reply() *ReplyButton {
 		User:     b.User,
 		Chat:     b.Chat,
 		WebApp:   b.WebApp,
+		Style:    b.Style,
 	}
 }
 
@@ -363,6 +366,7 @@ func (b Btn) Inline() *InlineButton {
 		Login:           b.Login,
 		WebApp:          b.WebApp,
 		CopyText:        b.CopyText,
+		Style:           b.Style,
 	}
 }
 
